@@ -10,12 +10,13 @@ pipeline {
       }
     }
     stage('Application Build') {
-    environment {
-        PATH = "$PATH:/usr/local/bin"
-    }
       steps {
-        script {
-          sh 'cd scripts && chmod +x build.sh && ./build.sh'
+                // Get some code from a GitHub repository
+                git url: 'https://github.com/wof300/cicd-pipeline.git', branch: 'main'
+                // Change file permisson
+                sh "chmod +x -R ./scripts"
+                // Run shell script
+                sh "./scripts/build.sh"
         }
 
       }
