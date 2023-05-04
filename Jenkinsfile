@@ -17,8 +17,14 @@ pipeline {
           sh "chmod +x -R ./scripts"
           // Run shell script
           sh "./scripts/build.sh"
-        }
-      }
-    }
+       }
+     }
+   }
+     stage('Tests') {
+            steps {
+                sh './scripts/test.sh'
+       }
+     }
+   }
   }
 }
