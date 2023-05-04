@@ -22,8 +22,11 @@ pipeline {
    }
      stage('Tests') {
             steps {
+                nodejs('19.7.0') {
                 sh './scripts/test.sh'
-       }
-     }
-   }
- }
+        }
+      }
+    }
+  }
+}
+
