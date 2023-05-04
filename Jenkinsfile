@@ -10,5 +10,15 @@ pipeline {
       }
     }
 
+    stage('Application Build') {
+      steps {
+        script {
+          checkout scm
+          sh './scripts/build.sh'
+        }
+
+      }
+    }
+
   }
 }
