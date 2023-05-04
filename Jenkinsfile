@@ -5,7 +5,15 @@ pipeline {
       steps {
         script {
           git branch: 'main', url: 'https://github.com/wof300/cicd-pipeline.git'
+        }
 
+      }
+    }
+
+    stage('Application build') {
+      steps {
+        script {
+          sh 'script /scripts/build.sh'
         }
 
       }
