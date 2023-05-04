@@ -45,6 +45,10 @@ pipeline {
     }
 
     stage('Docker Image Push') {
+      agent any
+      environment {
+        registry = 'wof300/cicdrepo'
+      }
       steps {
         script {
           docker.withRegistry('', 'dockerhub-id') {
