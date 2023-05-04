@@ -9,11 +9,10 @@ pipeline {
 
       }
     }
-     environment {
+    stage('Application Build') {
+    environment {
         PATH = "$PATH:/usr/local/bin"
     }
-
-    stage('Application Build') {
       steps {
         script {
           sh 'cd scripts && chmod +x build.sh && ./build.sh'
