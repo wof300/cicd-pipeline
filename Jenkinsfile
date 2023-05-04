@@ -9,6 +9,9 @@ pipeline {
 
       }
     }
+     environment {
+        PATH = "$PATH:/usr/local/bin"
+    }
 
     stage('Application Build') {
       steps {
